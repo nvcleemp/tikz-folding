@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{folding}
+
+\usepackage[graphics,tightpage,active]{preview}
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=2, >=latex]
+\tikzstyle{ann} = [fill=white,font=\large,inner sep=8pt]
+
+\useasboundingbox (-4,-4) rectangle (4,4);
+
+\coordinate (1) at (22.5:2.61312);
+\coordinate (2) at (67.5:2.61312) {};
+\coordinate (3) at (112.5:2.61312) {};
+\coordinate (4) at (157.5:2.61312) {};
+\coordinate (5) at (202.5:2.61312) {};
+\coordinate (6) at (247.5:2.61312) {};
+\coordinate (7) at (292.5:2.61312) {};
+\coordinate (8) at (337.5:2.61312) {};
+
+\draw[very thick] (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7) -- (8) -- (1) --
+ cycle;
+
+\begin{scope}[shift={(247.5:2.61312)}]
+\node [fill=red, circle, label=below:{(0,0)}] at (0,0) {};
+
+\draw [->, very thick, red] (0,0) -- (0,.5);
+\draw [->, very thick, red] (0,0) -- (.5,0);
+\end{scope}
+
+\begin{scope}[shift={(0:3)}]
+\draw[<->, very thick] (0,1) -- (0,-1) node [midway, ann] {1};
+\draw[<->, very thick] (0,1) -- (0,2.41421) node [midway, ann] {$\frac{\sqrt{2}}
+{2}$};
+\draw[<->, very thick] (0,-1) -- (0,-2.41421) node [midway, ann] {$\frac{\sqrt{2
+}}{2}$};
+\draw (-.1,2.41421) -- (-1.9,2.41421);
+\draw (-.1,1) -- (-.5,1);
+\draw (-.1,-1) -- (-.5,-1);
+\draw (-.1,-2.41421) -- (-1.9,-2.41421);
+\end{scope}
+
+\begin{scope}[shift={(90:3)}]
+\draw[<->, very thick] (1,0) -- (-1,0) node [midway, ann] {1};
+\draw[<->, very thick] (1,0) -- (2.41421,0) node [midway, ann] {$\frac{\sqrt{2}}
+{2}$};
+\draw[<->, very thick] (-1,0) -- (-2.41421,0) node [midway, ann] {$\frac{\sqrt{2
+}}{2}$};
+\draw (2.41421,-.1) -- (2.41421,-1.9);
+\draw (1,-.1) -- (1,-.5);
+\draw (-1,-.1) -- (-1,-.5);
+\draw (-2.41421,-.1) -- (-2.41421,-1.9);
+\end{scope}
+\end{tikzpicture}
+
+\end{document}
