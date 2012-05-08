@@ -222,9 +222,11 @@
 \def\tikz@lib@fold@path{\draw[every fold](0,0) -- (\tikz@lib@fold@length,0pt);}
 \def\tikz@lib@fold@cut@path{\draw[every cut](0,0) -- (\tikz@lib@fold@length,0pt);}
 \def\tikz@lib@fold@ear@path{
+  \path[every ear] (0,0) -- (.5\tikz@lib@fold@length,.2\tikz@lib@fold@length) --(\tikz@lib@fold@length,0pt) --(0,0) -- cycle;
   \draw[every fold](0,0) -- (\tikz@lib@fold@length,0pt);
   \draw[every cut] (0,0) -- (.5\tikz@lib@fold@length,.2\tikz@lib@fold@length) --(\tikz@lib@fold@length,0pt);}
 
+\tikzstyle{every ear}=[]
 \tikzstyle{every cut}=[]
 \tikzstyle{every fold}=[help lines]
 
