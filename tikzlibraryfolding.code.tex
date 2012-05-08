@@ -225,6 +225,14 @@
   \path[every ear] (0,0) -- (.5\tikz@lib@fold@length,.2\tikz@lib@fold@length) --(\tikz@lib@fold@length,0pt) --(0,0) -- cycle;
   \draw[every fold](0,0) -- (\tikz@lib@fold@length,0pt);
   \draw[every cut] (0,0) -- (.5\tikz@lib@fold@length,.2\tikz@lib@fold@length) --(\tikz@lib@fold@length,0pt);}
+\def\tikz@lib@fold@ear@custom@left@path#1{
+  \path[every ear] (0,0) -- (#1:.66\tikz@lib@fold@length) -- (\tikz@lib@fold@length,0pt) --(0,0) -- cycle;
+  \draw[every fold](0,0) -- (\tikz@lib@fold@length,0pt);
+  \draw[every cut] (0,0) -- (#1:.66\tikz@lib@fold@length) -- (\tikz@lib@fold@length,0pt);}
+\def\tikz@lib@fold@ear@custom@right@path#1{
+  \path[every ear] (0,0) -- (\tikz@lib@fold@length,0pt) -- ++(-#1:-.66\tikz@lib@fold@length) --(0,0) -- cycle;
+  \draw[every fold](0,0) -- (\tikz@lib@fold@length,0pt);
+  \draw[every cut] (\tikz@lib@fold@length,0pt) -- ++(-#1:-.66\tikz@lib@fold@length) -- (0,0);}
 
 \tikzstyle{every ear}=[]
 \tikzstyle{every cut}=[]
