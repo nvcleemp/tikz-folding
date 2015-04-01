@@ -219,6 +219,25 @@
   \end{scope}
 }
 
+\def\tikz@lib@fold@rhombus#1#2#3#4#5#6{%
+  \begin{scope}[xshift=.5\tikz@lib@fold@length,
+  				shift={(#1:.5\tikz@lib@fold@length)}]
+    #2
+  \end{scope}
+  \begin{scope}[shift={(#1:\tikz@lib@fold@length)}]
+    #3
+  \end{scope}
+  \begin{scope}[xshift=\tikz@lib@fold@length,shift={(#1:\tikz@lib@fold@length)},rotate=-180+#1]
+    #4
+  \end{scope}
+  \begin{scope}[xshift=\tikz@lib@fold@length,rotate=180]
+    #5
+  \end{scope}
+  \begin{scope}[rotate=#1]
+    #6
+  \end{scope}
+}
+
 \def\tikz@lib@fold@path{\draw[every fold](0,0) -- (\tikz@lib@fold@length,0pt);}
 \def\tikz@lib@fold@cut@path{\draw[every cut](0,0) -- (\tikz@lib@fold@length,0pt);}
 \def\tikz@lib@fold@ear@path{
@@ -2051,6 +2070,101 @@
              }
              {\tikz@lib@fold@path}
              {\tikz@lib@fold@cut@path}
+        }
+  \endgroup
+}
+
+% Catalan Solids
+% --------------
+
+% Rhombic Dodecahedron
+
+\def\tikzfoldingrhombicdodecahedron#1[#2]#3;{%
+  \begingroup%
+    \tikzset{#2}%
+    \tikz@lib@fold@rhombus
+        {70.5287794}
+        {\tikz@lib@fold@face@A}
+        {\tikz@lib@fold@rhombus
+             {109.4712206}
+             {\tikz@lib@fold@face@B}
+             {\tikz@lib@fold@rhombus
+                  {70.5287794}
+                  {\tikz@lib@fold@face@C}
+                  {\tikz@lib@fold@ear@path}
+                  {\tikz@lib@fold@ear@path}
+                  {\tikz@lib@fold@path}
+                  {\tikz@lib@fold@cut@path}
+             }
+             {\tikz@lib@fold@ear@path}
+             {\tikz@lib@fold@path}
+             {\tikz@lib@fold@cut@path}
+        }
+        {\tikz@lib@fold@rhombus
+             {70.5287794}
+             {\tikz@lib@fold@face@D}
+             {\tikz@lib@fold@rhombus
+                  {109.4712206}
+                  {\tikz@lib@fold@face@E}
+                  {\tikz@lib@fold@ear@path}
+                  {\tikz@lib@fold@ear@path}
+                  {\tikz@lib@fold@path}
+                  {\tikz@lib@fold@ear@path}
+             }
+             {\tikz@lib@fold@ear@path}
+             {\tikz@lib@fold@path}
+             {\tikz@lib@fold@rhombus
+                  {70.5287794}
+                  {\tikz@lib@fold@face@F}
+                  {\tikz@lib@fold@cut@path}
+                  {\tikz@lib@fold@cut@path}
+                  {\tikz@lib@fold@path}
+                  {\tikz@lib@fold@cut@path}
+             }
+        }
+        {\tikz@lib@fold@rhombus
+             {109.4712206}
+             {\tikz@lib@fold@face@G}
+             {\tikz@lib@fold@rhombus
+                  {70.5287794}
+                  {\tikz@lib@fold@face@H}
+                  {\tikz@lib@fold@rhombus
+                       {109.4712206}
+                       {\tikz@lib@fold@face@I}
+                       {\tikz@lib@fold@cut@path}
+                       {\tikz@lib@fold@cut@path}
+                       {\tikz@lib@fold@path}
+                       {\tikz@lib@fold@cut@path}
+                  }
+                  {\tikz@lib@fold@cut@path}
+                  {\tikz@lib@fold@path}
+                  {\tikz@lib@fold@cut@path}
+             }
+             {\tikz@lib@fold@rhombus
+                  {109.4712206}
+                  {\tikz@lib@fold@face@J}
+                  {\tikz@lib@fold@cut@path}
+                  {\tikz@lib@fold@cut@path}
+                  {\tikz@lib@fold@path}
+                  {\tikz@lib@fold@ear@path}
+             }
+             {\tikz@lib@fold@path}
+             {\tikz@lib@fold@cut@path}
+        }
+        {\tikz@lib@fold@rhombus
+             {70.5287794}
+             {\tikz@lib@fold@face@K}
+             {\tikz@lib@fold@rhombus
+                  {109.4712206}
+                  {\tikz@lib@fold@face@L}
+                  {\tikz@lib@fold@ear@path}
+                  {\tikz@lib@fold@ear@path}
+                  {\tikz@lib@fold@path}
+                  {\tikz@lib@fold@ear@path}
+             }
+             {\tikz@lib@fold@ear@path}
+             {\tikz@lib@fold@path}
+             {\tikz@lib@fold@ear@path}
         }
   \endgroup
 }
