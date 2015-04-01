@@ -1,0 +1,7 @@
+#ignore build files
+*.aux
+*.log
+*.synctex.gz
+
+#ignore output files
+*.pdf
