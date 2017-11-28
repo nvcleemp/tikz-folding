@@ -22,7 +22,16 @@
 % Faces
 % -----
 
+\tikzstyle{every face}=[]
+\tikzstyle{every triangle}=[]
+\tikzstyle{every quadrangle}=[]
+\tikzstyle{every pentagon}=[]
+\tikzstyle{every hexagon}=[]
+\tikzstyle{every octagon}=[]
+\tikzstyle{every decagon}=[]
+
 \def\tikz@lib@fold@triangle#1#2#3#4{%
+  \path[every face, every triangle] (0,0) -- (\tikz@lib@fold@length,0) -- (60:\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}[xshift=.5\tikz@lib@fold@length,yshift=.28868\tikz@lib@fold@length]
     #1
   \end{scope}
@@ -38,6 +47,7 @@
 }
 
 \def\tikz@lib@fold@square#1#2#3#4#5{%
+  \path[every face, every quadrangle] (0,0) -- (\tikz@lib@fold@length,0) -- (\tikz@lib@fold@length,\tikz@lib@fold@length) -- (0,\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}[xshift=.5\tikz@lib@fold@length,yshift=.5\tikz@lib@fold@length]
     #1
   \end{scope}
@@ -56,6 +66,7 @@
 }
 
 \def\tikz@lib@fold@pentagon#1#2#3#4#5#6{%
+  \path[every face, every pentagon] (0,0) -- (\tikz@lib@fold@length,0) -- ++(72:\tikz@lib@fold@length) -- ++(144:\tikz@lib@fold@length) -- (108:\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}[xshift=.5\tikz@lib@fold@length,yshift=0.68819\tikz@lib@fold@length]
     #1
   \end{scope}
@@ -77,6 +88,7 @@
 }
 
 \def\tikz@lib@fold@hexagon#1#2#3#4#5#6#7{%
+  \path[every face, every hexagon] (0,0) -- (\tikz@lib@fold@length,0) -- ++(60:\tikz@lib@fold@length) -- ++(120:\tikz@lib@fold@length) -- ++(180:\tikz@lib@fold@length) -- ++(240:\tikz@lib@fold@length) -- ++(300:\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}
           [shift={(60:\tikz@lib@fold@length)}]
     #1
@@ -116,6 +128,7 @@
 }
 
 \def\tikz@lib@fold@octagon#1#2#3#4#5#6#7#8#9{%
+  \path[every face, every octagon] (0,0) -- (\tikz@lib@fold@length,0) -- ++(45:\tikz@lib@fold@length) -- ++(90:\tikz@lib@fold@length) -- ++(135:\tikz@lib@fold@length) -- ++(180:\tikz@lib@fold@length) -- ++(225:\tikz@lib@fold@length) -- ++(270:\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}[xshift=.5\tikz@lib@fold@length,yshift=1.20711\tikz@lib@fold@length]
     #1
   \end{scope}
@@ -146,6 +159,7 @@
 }
 
 \def\tikz@lib@fold@decagon#1#2#3#4#5#6#7{%
+  \path[every face, every decagon] (0,0) -- (\tikz@lib@fold@length,0) -- ++(36:\tikz@lib@fold@length) -- ++(72:\tikz@lib@fold@length) -- ++(108:\tikz@lib@fold@length) -- ++(144:\tikz@lib@fold@length) -- ++(180:\tikz@lib@fold@length) -- ++(216:\tikz@lib@fold@length) -- ++(252:\tikz@lib@fold@length) -- ++(288:\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}[shift={(72:1.61803\tikz@lib@fold@length)}] %decagon inside a circle with radius the golden ratio has side length 1
     #1
   \end{scope}
@@ -220,6 +234,7 @@
 }
 
 \def\tikz@lib@fold@rhombus#1#2#3#4#5#6{%
+  \path[every face, every quadrangle] (0,0) -- (\tikz@lib@fold@length,0) -- ++(#1:\tikz@lib@fold@length) -- ++(180:\tikz@lib@fold@length) -- (0,0) -- cycle;
   \begin{scope}[xshift=.5\tikz@lib@fold@length,
   				shift={(#1:.5\tikz@lib@fold@length)}]
     #2
